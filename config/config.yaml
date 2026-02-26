@@ -1,0 +1,31 @@
+shovels:
+  api_key: "92GsqyLVjTXm4cBMtSopIQVAdo2d8SPZ6N9q_9HJbx8"
+  base_url: "https://api.shovels.ai/v2"
+
+gcp:
+  project_id: "profitscout-fida8"
+  dataset: "waste_leads"
+
+clients:
+  arrow:
+    name: "Arrow Waste Services"
+    geo_ids:
+      - "yjVD_3U4lG8"   # Fulton County, GA
+      - "ygWg1SIWcvo"   # Clayton County, GA
+    service_types:
+      - "residential"
+      - "commercial"
+      - "industrial"
+    permit_tags:
+      - "new_construction"
+      - "demolition"
+      - "addition"
+      - "remodel"
+      - "roofing"
+      - "kitchen"
+      - "bathroom"
+      - "pool_and_hot_tub"
+      - "grading"
+      - "plumbing"
+      - "electrical"
+      - "hvac"
