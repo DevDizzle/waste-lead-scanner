@@ -5,3 +5,4 @@ streamlit>=1.30.0
 folium>=0.15.0
 streamlit-folium>=0.15.0
 pandas>=2.1.0
+db-dtypes>=1.2.0
