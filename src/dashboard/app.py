@@ -21,7 +21,17 @@ dataset = config['gcp']['dataset']
 
 @st.cache_data(ttl=300)
 def load_data():
-    client = bigquery.Client(project=project_id)
+    # If running on Streamlit Cloud with secrets, use them
+    if "gcp_service_account" in st.secrets:
+        from google.oauth2 import service_account
+        credentials = service_account.Credentials.from_service_account_info(
+            st.secrets["gcp_service_account"]
+        )
+        client = bigquery.Client(credentials=credentials, project=project_id)
+    else:
+        # Fallback to default auth (local execution)
+        client = bigquery.Client(project=project_id)
+        
     query = f"""
         SELECT * FROM `{project_id}.{dataset}.scored_leads`
     """
